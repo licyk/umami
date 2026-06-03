@@ -242,6 +242,12 @@ export default withNextIntl({
   },
   basePath,
   output: 'standalone',
+  outputFileTracingIncludes: {
+    '/api/websites/*/heatmaps/snapshots/*': [
+      './node_modules/playwright-core/**/*',
+      './node_modules/.pnpm/playwright-core@*/node_modules/playwright-core/**/*',
+    ],
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
